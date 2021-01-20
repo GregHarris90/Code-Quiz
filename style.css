@@ -1,0 +1,42 @@
+body 
+{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: auto;
+width: 50%;
+padding: 5px;
+background-color: rgb(243, 158, 0);}
+
+ul 
+{color: white;
+font-size: large;
+font-weight:bolder;
+padding: 5px;}
+
+#title 
+{color: rgb(33, 85, 145);
+font-size: larger;
+padding: 5px;}
+
+#rules 
+{color: rgb(33, 85, 145);
+font-size: 25px;
+font-weight: bold;
+padding: 5px;}
+
+.start-btn button
+{font-size: 25px;
+color: rgb(33, 85, 145);
+font-weight:bold;
+margin: 15px;
+padding: 15px;
+border: 5px solid rgb(33, 85, 145);
+border-radius: 15px;
+cursor: pointer;}
+
+.start-btn button:hover {
+background-color: #4CAF50; 
+color: white;}
+
+#send-off 
+{font-style: italic;
+color: rgb(33, 85, 145);
+font-weight: bold;}
