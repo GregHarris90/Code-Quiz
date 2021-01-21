@@ -24,7 +24,8 @@ body {
     padding: 15px;
     border: 5px solid rgb(33, 85, 145);
     border-radius: 15px;
-    cursor: pointer;}
+    cursor: pointer;
+    outline: none;}
 
 .highscore button:hover {
     background-color: #4CAF50; 
@@ -72,7 +73,8 @@ ul {
     padding: 15px;
     border: 5px solid rgb(33, 85, 145);
     border-radius: 15px;
-    cursor: pointer;}
+    cursor: pointer;
+    outline: none;}
 
 .start-btn button:hover {
     background-color: #4CAF50; 
