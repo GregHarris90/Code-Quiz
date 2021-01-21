@@ -14,42 +14,6 @@ body {
     margin: 15px;
 }
 
-.highscore button {
-    margin: auto;
-    text-align: center;
-    font-size: 25px;
-    color: rgb(33, 85, 145);
-    font-weight:bold;
-    margin: 15px;
-    padding: 15px;
-    border: 5px solid rgb(33, 85, 145);
-    border-radius: 15px;
-    cursor: pointer;
-    outline: none;}
-
-.highscore button:hover {
-    background-color: #4CAF50; 
-    color: white;}
-    
-.timer {
-    font-weight: bolder;
-    border-style: solid;
-    border-color: rgb(33, 85, 145);
-    width: 50%;
-    color: rgb(33, 85, 145);
-    border-width: 5px;
-    border-radius: 15px;
-    background: white;
-    padding: 5px;
-    margin: 15px;
-}
-
-ul {
-    color: white;
-    font-size: large;
-    font-weight:bolder;
-    padding: 5px;}
-
 #title {
     color: rgb(33, 85, 145);
     padding: 5px;
@@ -61,8 +25,14 @@ ul {
     font-size: 25px;
     font-weight: bold;
     padding: 5px;}
+    
+ul {
+    color: white;
+    font-size: large;
+    font-weight:bolder;
+    padding: 5px;}
 
-.start-btn button {
+#start-btn button {
     margin: auto;
     width: 50%;
     text-align: center;
@@ -76,7 +46,7 @@ ul {
     cursor: pointer;
     outline: none;}
 
-.start-btn button:hover {
+#start-btn button:hover {
     background-color: #4CAF50; 
     color: white;}
 
@@ -84,3 +54,57 @@ ul {
     font-style: italic;
     color: rgb(33, 85, 145);
     font-weight: bold;}
+
+#highscore button {
+    float: left;
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(33, 85, 145);
+    font-weight:bold;
+    margin: 15px;
+    padding: 15px;
+    border: 5px solid rgb(33, 85, 145);
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;}
+    
+#highscore button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+        
+#timer {
+    float: right;
+    font-weight: bolder;
+    border-style: solid;
+    border-color: rgb(33, 85, 145);
+    width: 50%;
+    border-width: 5px;
+    border-radius: 15px;
+    background: white;
+    padding: 10px;
+    margin: 15px;
+    }
+
+/* .game-page, .score-time{
+    margin: auto;
+} */
+.questions-answers { }
+
+
+
+#question {
+    color: rgb(33, 85, 145);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;}
+    
+.select-answers button {
+    grid-auto-columns: 0;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;}
+
+/* .hide {
+    display: none;
+} */

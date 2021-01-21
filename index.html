@@ -8,20 +8,16 @@
 
 </head>
 <body>
-    <header>
-        <div class = "highscore"><button>View Highscore</button></div>
-        
-        <div class = "timer">Time left:</div>
 
-    </header>
+    <section>        
+        <div class = "text-top">
+                <div id = "title"><h1>CODING QUIZ CHALLENGE</h1></div>
+        </div>
+    </section>
+
     
     <main class = "open-page">
-        <section>        
-            <div class = "text-top">
-                    <div id = "title"><h1>CODING QUIZ CHALLENGE</h1></div>
-            </div>
-        </section>
-
+        
         <section>
             <div>
                 <ul id="rules">INSTRUCTIONS:</ul>
@@ -34,19 +30,32 @@
             </div>   
         </section>
                     
-        <div class = "start-btn"><button>Start</button></div>
+        <div id = "start-btn"><button>Start</button></div>
     
     </main>
 
-    <main class = questions-answers>
-    <div id = "question">Question</div>
-    <div id="answers" class="select-answers">
-        <button class = "btn-a">Answer A</button>
-        <button class = "btn-b">Answer B</button>
-        <button class = "btn-c">Answer C</button>
-        <button class = "btn-d">Answer D</button>
+    <main class = "game-page">
+        <div class = "hide">
+            <header class="score-time">
+                <div id = "highscore"><button>View Highscore</button></div>
+                
+                <div id = "timer">Time left: <span class="time-count">75</span> seconds remaining</div>
+            </header>
+    
+            <section class="questions-answers">
+                <div id = "question">Question</div>
 
-    </div>
+                <div class="select-answers">
+                        <button class = "btn">Answer A</button>
+                        <button class = "btn">Answer B</button>
+                        <button class = "btn">Answer C</button>
+                        <button class = "btn">Answer D</button>
+                </div>
+                
+            </section>
+        
+        </div>
+    
     </main>
     
     <script src="./script.js"></script>
