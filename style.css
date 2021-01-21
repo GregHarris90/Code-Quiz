@@ -1,42 +1,84 @@
-body 
-{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-margin: auto;
-width: 50%;
-padding: 5px;
-background-color: rgb(243, 158, 0);}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    width: 50%;
+    background-color: rgb(243, 158, 0);}
 
-ul 
-{color: white;
-font-size: large;
-font-weight:bolder;
-padding: 5px;}
+.text-top {
+    border-style: solid;
+    border-color: rgb(33, 85, 145);
+    border-width: 15px;
+    border-radius: 15px;
+    background: white;
+    padding: 5px;
+    margin: 15px;
+}
 
-#title 
-{color: rgb(33, 85, 145);
-font-size: larger;
-padding: 5px;}
+.highscore button {
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(33, 85, 145);
+    font-weight:bold;
+    margin: 15px;
+    padding: 15px;
+    border: 5px solid rgb(33, 85, 145);
+    border-radius: 15px;
+    cursor: pointer;}
 
-#rules 
-{color: rgb(33, 85, 145);
-font-size: 25px;
-font-weight: bold;
-padding: 5px;}
+.highscore button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+    
+.timer {
+    font-weight: bolder;
+    border-style: solid;
+    border-color: rgb(33, 85, 145);
+    width: 50%;
+    color: rgb(33, 85, 145);
+    border-width: 5px;
+    border-radius: 15px;
+    background: white;
+    padding: 5px;
+    margin: 15px;
+}
 
-.start-btn button
-{font-size: 25px;
-color: rgb(33, 85, 145);
-font-weight:bold;
-margin: 15px;
-padding: 15px;
-border: 5px solid rgb(33, 85, 145);
-border-radius: 15px;
-cursor: pointer;}
+ul {
+    color: white;
+    font-size: large;
+    font-weight:bolder;
+    padding: 5px;}
+
+#title {
+    color: rgb(33, 85, 145);
+    padding: 5px;
+    text-align: center;
+    font-size: larger;}
+
+#rules {
+    color: rgb(33, 85, 145);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;}
+
+.start-btn button {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(33, 85, 145);
+    font-weight:bold;
+    margin: 15px;
+    padding: 15px;
+    border: 5px solid rgb(33, 85, 145);
+    border-radius: 15px;
+    cursor: pointer;}
 
 .start-btn button:hover {
-background-color: #4CAF50; 
-color: white;}
+    background-color: #4CAF50; 
+    color: white;}
 
-#send-off 
-{font-style: italic;
-color: rgb(33, 85, 145);
-font-weight: bold;}
+#send-off {
+    font-style: italic;
+    color: rgb(33, 85, 145);
+    font-weight: bold;}

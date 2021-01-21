@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Code Quiz</title>
+    <title>Code Quiz</title>
     <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-    <div class = "open-page">
-        <div id = "title"><h1>Coding Quiz Challenge</h1></div>
-            <ul id="rules">INSTRUCTIONS:</ul>
-            <ul>1) Test yourself with the following code-related questions.</ul>
-            <ul>2) Select your answer from a multiple choice list in given time.</ul>
-            <ul>3) You will be penalized by 10 seconds for every wrong answer.</ul>
-       </div>
-       <div><p id="send-off">May the odds be ever in your favor!</p></div>
-       <div class = "start-btn"><button>Start Quiz</button></div>
+    <header>
+        <div class = "highscore"><button>View Highscore</button></div>
+        
+        <div class = "timer">Time left:</div>
 
+    </header>
+    
+    <main class = "open-page">
+        <section>        
+            <div class = "text-top">
+                    <div id = "title"><h1>CODING QUIZ CHALLENGE</h1></div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <ul id="rules">INSTRUCTIONS:</ul>
+                <ul>1) Test yourself with the following code-related questions.</ul>
+                <ul>2) Select your answer from a multiple choice list in given time.</ul>
+                <ul>3) You will be penalized by 10 seconds for every wrong answer.</ul>
+            </div>
+            <div>
+                <p id="send-off">May the odds be ever in your favor!</p>
+            </div>   
+        </section>
+                    
+        <div class = "start-btn"><button>Start</button></div>
+    
+    </main>
+
+    <main class = questions-answers>
+        <div></div>
+    </main>
     
     <script src="./script.js"></script>
 </body>
