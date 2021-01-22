@@ -14,12 +14,46 @@ var highscoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("timer");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
+
+// var answersEl = document.getElementById()
+
+
+var timer = "";
+
+// Event listener on Start button
+startButton.addEventListener("click", startGame);
+
+
+function startGame () {
+    // hides openpage & unhides gamepage
+    openpageEl.classList.add("hide");
+    gamepageEl.classList.remove("hide");
+    getQuestions();
+
+}
+
+// function startTimer () {
+//     timer =setInterval(function() {
+//         timerCount--;
+//         timerEl.textContent = timerCount;
+        
+//     })
+// }
+
+function getQuestions(questions) {
+    var questionEl = document.getElementById("question").innerText = questions.question;
+
+    console.log = (getQuestions);
+    console.log = (questionEl);
     
+}
+
+
 
 // questions & answers array
 var questions = [
     {
-        question: "What does HTML stand for?",
+        question:"What does HTML stand for?",
         answers: [
             { text: "Hypertool Machine Language", correct: false},
             { text: "Hypertext Markup Language", correct: true},
@@ -55,31 +89,3 @@ var questions = [
         ]
     }
 ];
-
-
-
-var timer;
-
-// Event listener on Start button
-startButton.addEventListener("click", startGame, startTimer);
-
-
-function startGame () {
-    // hides openpage & unhides gamepage
-    openpageEl.classList.add("hide");
-    gamepageEl.classList.remove("hide");
-    getQuestions();
-
-}
-
-function startTimer () {
-    timer =setInterval(function() {
-        timerCount--;
-        timerEl.textContent = timerCount;
-        
-    })
-}
-
-function getQuestions() {
-
-}
