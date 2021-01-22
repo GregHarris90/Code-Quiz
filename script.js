@@ -11,14 +11,13 @@
 // DOM elements
 var startButton = document.getElementById("start-btn");
 var highscoreEl = document.getElementById("highscore");
-var timerEl = document.getElementById("timer");
+var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
 
 // var answersEl = document.getElementById()
+var secondsLeft = 76;
 
-
-var timer = "";
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
@@ -28,20 +27,25 @@ function startGame () {
     // hides openpage & unhides gamepage
     openpageEl.classList.add("hide");
     gamepageEl.classList.remove("hide");
+    startTimer();
     getQuestions();
 
 }
 
-// function startTimer () {
-//     timer =setInterval(function() {
-//         timerCount--;
-//         timerEl.textContent = timerCount;
-        
-//     })
-// }
+function startTimer () {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timerEl.textContent = secondsLeft + " seconds left";
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
+
 
 function getQuestions(questions) {
-    var questionEl = document.getElementById("question").innerText = questions.question;
+    var questionEl = document.getElementById("question").innerContent = questions.question;
 
     console.log = (getQuestions);
     console.log = (questionEl);
