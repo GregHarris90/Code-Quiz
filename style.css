@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: auto;
-    width: 50%;
+    width: 55%;
     background-color: rgb(243, 158, 0);}
 
 .text-top {
@@ -56,9 +56,9 @@ ul {
     font-weight: bold;}
 
 #highscore button {
-    float: left;
+    position: absolute;
+    /* float: left; */
     margin: auto;
-    text-align: center;
     font-size: 15px;
     color: rgb(33, 85, 145);
     font-weight:bold;
@@ -75,10 +75,10 @@ ul {
         
 #timer {
     float: right;
+    right: 250px;
     font-weight: bolder;
     border-style: solid;
     border-color: rgb(33, 85, 145);
-    width: 50%;
     border-width: 5px;
     border-radius: 15px;
     background: white;
@@ -86,25 +86,33 @@ ul {
     margin: 15px;
     }
 
-/* .game-page, .score-time{
-    margin: auto;
-} */
-.questions-answers { }
-
-
+.questions-answers {
+    background-color: rgb(33, 85, 145);
+    border-radius: 10px;
+    padding: 30px 0 20px;
+    margin: 50px 0 20px;
+}
 
 #question {
-    color: rgb(33, 85, 145);
     font-size: 25px;
+    margin: 15px;
     font-weight: bold;
+    margin-top: 50px;
     padding: 5px;}
     
-.select-answers button {
-    grid-auto-columns: 0;
+.answers button {
+    border-width: 5px;
+    border-radius: 5px;
+    border-style:groove;
+    font-weight: bolder;
     text-align: center;
     margin: 15px;
     padding: 15px;}
 
-/* .hide {
+.answers button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+
+.hide {
     display: none;
-} */
+}

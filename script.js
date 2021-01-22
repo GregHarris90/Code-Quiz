@@ -16,5 +16,22 @@ var timerEl = document.getElementById("timer");
 // questions & answers array
 var questions = [];
 var answers = [];
+var timer;
 
-function startGame ();
+// Event listener on Start button
+document.addEventListener("click", startGame, startTimer);
+
+
+function startGame () {
+
+}
+
+function startTimer () {
+    timer =setInterval(function() {
+        timerCount--;
+        timerEl.textContent = timerCount;
+        
+    })
+}
+
+function getQuestions() {}
