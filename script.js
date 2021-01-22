@@ -12,6 +12,9 @@
 var startButton = document.getElementById("start-btn");
 var highscoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("timer");
+var openpageEl = document.getElementById("openpage");
+var gamepageEl = document.getElementById("gamepage");
+    
 
 // questions & answers array
 var questions = [];
@@ -19,10 +22,14 @@ var answers = [];
 var timer;
 
 // Event listener on Start button
-document.addEventListener("click", startGame, startTimer);
+startButton.addEventListener("click", startGame, startTimer);
 
 
 function startGame () {
+    // hides openpage & unhides gamepage
+    openpageEl.classList.add("hide");
+    gamepageEl.classList.remove("hide");
+
 
 }
 
