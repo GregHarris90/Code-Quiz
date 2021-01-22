@@ -14,7 +14,7 @@ body {
     margin: 15px;
 }
 
-#title {
+#header {
     color: rgb(33, 85, 145);
     padding: 5px;
     text-align: center;
@@ -46,18 +46,18 @@ ul {
     cursor: pointer;
     outline: none;}
 
-#start-btn button:hover {
-    background-color: #4CAF50; 
-    color: white;}
-
 #send-off {
     font-style: italic;
     color: rgb(33, 85, 145);
     font-weight: bold;}
 
+#start-btn button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+
+
 #highscore button {
     position: absolute;
-    /* float: left; */
     margin: auto;
     font-size: 15px;
     color: rgb(33, 85, 145);

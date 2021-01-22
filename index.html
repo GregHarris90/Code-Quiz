@@ -9,15 +9,17 @@
 </head>
 <body>
 
+    <!-- Title of Game -->
     <section>        
         <div class = "text-top">
-                <div id = "title"><h1>CODING QUIZ CHALLENGE</h1></div>
+                <div id = "header"><h1>CODING QUIZ CHALLENGE</h1></div>
         </div>
     </section>
 
-    
-    <main class = "open-page hide">
+    <!-- Intro open-page -->
+    <main class = "open-page">
         
+        <!-- Instructions & added below text -->
         <section>
             <div>
                 <ul id="rules">INSTRUCTIONS:</ul>
@@ -30,19 +32,22 @@
             </div>   
         </section>
                     
+        <!-- Start Button at bottom -->
         <div id = "start-btn"><button>Start</button></div>
     
     </main>
 
-    <main class = "game-page">
-        <!-- <div class = "hide"> -->
-            <div>
+    <!-- Game-page -->
+    <main class = "game-page hide">
+
+                <!-- Header for Highscore Button & Timer -->
                 <header class="score-time">
                     <div id = "highscore"><button>View Highscore</button></div>
                     
                     <div id = "timer">Time left: <span class="time-count">75</span> seconds</div>
                 </header>
         
+                <!-- Game questions & Answer buttons -->
                 <section class="questions-answers">
                     <div id = "question">Question</div>
     
@@ -54,8 +59,6 @@
                     </div>
                 </section>
 
-           </div>
-        </div>
     </main>
     
     <script src="./script.js"></script>
