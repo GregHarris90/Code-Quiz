@@ -45,7 +45,7 @@ Homework assignment for Week 4 of Coding Bootcamp!
 
 ### 01/21/21
 
-- Just like last week I'll be turning in this assignment as incomplete. As I'm still having a lot of trouble putting everything together with JavaScript. 
+- Just like last week I'll be turning in this assignment as incomplete. I'm still having a lot of trouble putting everything together with JavaScript. 
 
 - I've touched base with a tutor and will be finding a time to go over these last two sections (JavaScript/Web-APIs) to better understand them. 
 
