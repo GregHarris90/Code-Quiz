@@ -15,9 +15,8 @@ var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
 
+var timerInterval;
 var secondsLeft = 76; 
-
-
 
 var questionEl = document.getElementById("question");
 var answersEl = document.getElementById("answers");
@@ -30,49 +29,49 @@ startButton.addEventListener("click", startGame);
 function startGame () {
     // hides openpage & unhides gamepage
     openpageEl.classList.add("hide");
-    shuffleQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0
+    shuffleQuestions = questions.sort(() => Math.random() - .5);
     gamepageEl.classList.remove("hide");
-    startTimer();
     getQuestions();
+
+    timerInterval = setInterval(function() {
+        secondsLeft--;
+        timerEl.textContent = secondsLeft + " seconds left";
+    
+        if(secondsLeft === 0) {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
 
 }
 
 function getQuestions() {
-    // resetGame()
     showQuestion(shuffleQuestions[currentQuestionIndex]);
-     
 }
 
 function showQuestion(question) {
     questionEl.innerText = question.question;
-    question.answers.forEach(answer => {
-        var button = document.createElement("button")
-        button.innerText = answer.text
-        button.classList.add("btn")
-
-        if(answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener("click", selectAnswer);
-        answersEl.appendChild(button);
-    })
 }
 
-// function resetGame () {
-//     next.
-// }
 
-function startTimer () {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timerEl.textContent = secondsLeft + " seconds left";
 
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-    }
-  }, 1000);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // questions & answers array
 var questions = [
