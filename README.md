@@ -35,11 +35,11 @@ Homework assignment for Week 4 of Coding Bootcamp!
 
 ![Press-start](https://user-images.githubusercontent.com/73864182/105461301-e20c0400-5c41-11eb-9b45-55b092307e62.png)
 
-*First Question*
+*Non-working Game-Page*
 
 ![First-Question](https://user-images.githubusercontent.com/73864182/105461372-fa7c1e80-5c41-11eb-8fe3-14a4165cefdc.png)
 
-*Working Game-Page*
+*Working Game-Page* (EDIT)
 
 ![Question-fixed](https://user-images.githubusercontent.com/73864182/105574372-f838c380-5d18-11eb-8cd3-1faf68a1fd34.png)
 
@@ -57,7 +57,7 @@ Homework assignment for Week 4 of Coding Bootcamp!
 
 *I will continue working on this until I get it working!*
 
-### 01/22/21
+### 01/22/21 (EDIT)
 
 - Spent Friday going over these last few sections(JavaScript/Web-APIs) and doing some reivew. Then continued work on my Code Quiz Challenge. 
 
