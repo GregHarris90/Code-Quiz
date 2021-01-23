@@ -74,7 +74,7 @@ function showQuestion(question) {
     questionEl.innerText = question.question;
     }
 // function to add answer text to buttons
-function showAnswers(texta) {
+function showAnswers() {
     var currentAnswers = questions[currentQuestionIndex]
     buttonA.innerText = currentAnswers.texta;
     buttonB.innerText = currentAnswers.textb;
