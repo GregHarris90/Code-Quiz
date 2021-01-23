@@ -1,7 +1,7 @@
-// click start button to start game
-// switches from main-page (hide) to game-page (unhide)
-// starts timer
-// presents question/answers
+// click start button to start game X
+// switches from main-page (hide) to game-page (unhide) X
+// starts timer X
+// presents question/answers X
 // logs answers
 // display correct or incorrect
 // if incorrect subtract time
@@ -83,25 +83,26 @@ function showAnswers() {
     buttonD.innerText = currentAnswers.textd;
 
     // Event listeners on Answer buttons
-    buttonA.addEventListener("click", checkAnswer);
-    buttonB.addEventListener("click", checkAnswer);
-    buttonC.addEventListener("click", checkAnswer);
-    buttonD.addEventListener("click", checkAnswer);
+    buttonA.addEventListener("click", checkAnswer("texta"));
+    buttonB.addEventListener("click", checkAnswer("textb"));
+    buttonC.addEventListener("click", checkAnswer("textc"));
+    buttonD.addEventListener("click", checkAnswer("textd"));
 }
 
 
 // function to check answer
 function checkAnswer (answer) {
-    correctAnswer = questions[currentQuestionIndex].correct;
+    answer = questions[currentQuestionIndex].correct;
 
-    if (answer === correct) {
+    if (answer === correctAnswer) {
         score++;
-        "This is correct!";
+        alert("This is correct!");
         currentQuestionIndex++;
         getQuestions();
     }
 }
 
+console.log(correctAnswer);
 
 // questions & answers array
 var questions = [
