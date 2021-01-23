@@ -15,22 +15,53 @@ var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
 
-// var answersEl = document.getElementById()
-var secondsLeft = 76;
+var secondsLeft = 76; 
 
+
+
+var questionEl = document.getElementById("question");
+var answersEl = document.getElementById("answers");
+let shuffleQuestions, currentQuestionIndex
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
 
-
+// function to start game
 function startGame () {
     // hides openpage & unhides gamepage
     openpageEl.classList.add("hide");
+    shuffleQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0
     gamepageEl.classList.remove("hide");
     startTimer();
     getQuestions();
 
 }
+
+function getQuestions() {
+    // resetGame()
+    showQuestion(shuffleQuestions[currentQuestionIndex]);
+     
+}
+
+function showQuestion(question) {
+    questionEl.innerText = question.question;
+    question.answers.forEach(answer => {
+        var button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+
+        if(answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer);
+        answersEl.appendChild(button);
+    })
+}
+
+// function resetGame () {
+//     next.
+// }
 
 function startTimer () {
   var timerInterval = setInterval(function() {
@@ -42,17 +73,6 @@ function startTimer () {
     }
   }, 1000);
 }
-
-
-function getQuestions(questions) {
-    var questionEl = document.getElementById("question").innerContent = questions.question;
-
-    console.log = (getQuestions);
-    console.log = (questionEl);
-    
-}
-
-
 
 // questions & answers array
 var questions = [
@@ -66,7 +86,7 @@ var questions = [
         ]
     },
     {
-        question: "Which is the most common coding language?",
+        question: 'Which is the most common coding language?',
         answers: [
             { text: "JavaScript", correct: true},
             { text: "Ruby", correct: false},
@@ -75,7 +95,7 @@ var questions = [
         ]
     },
     {
-        question: "Which naming convention is being used: 'codeQuiz'?",
+        question: "Which naming convention is being used: codeQuiz?",
         answers: [
             { text: "gorilla case", correct: false},
             { text: "pascal case", correct: false},

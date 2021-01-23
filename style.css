@@ -86,7 +86,7 @@ ul {
     margin: 15px;
     }
 
-.questions-answers {
+.game {
     background-color: rgb(33, 85, 145);
     border-radius: 10px;
     padding: 30px 0 20px;
@@ -100,7 +100,7 @@ ul {
     margin-top: 50px;
     padding: 5px;}
     
-.answers button {
+#answers button {
     border-width: 5px;
     border-radius: 5px;
     border-style:groove;
@@ -109,7 +109,7 @@ ul {
     margin: 15px;
     padding: 15px;}
 
-.answers button:hover {
+#answers button:hover {
     background-color: #4CAF50; 
     color: white;}
 
