@@ -15,6 +15,10 @@ var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
 
+// Game elements
+var score = 0;
+var correct;
+
 // Timer elements
 var timerInterval;
 var secondsLeft = 76; 
@@ -23,6 +27,7 @@ var secondsLeft = 76;
 var questionEl = document.getElementById("question");
 var shuffleQuestions;
 var currentQuestionIndex;
+// var lastQuestion = questions.length;
 
 // Answer elements
 var buttonA = document.getElementById("btn-a");
@@ -32,11 +37,6 @@ var buttonD = document.getElementById("btn-d");
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
-
-var buttonA = document.getElementById("btn-a");
-var buttonB = document.getElementById("btn-b");
-var buttonC = document.getElementById("btn-c");
-var buttonD = document.getElementById("btn-d");
 
 // function to start game
 function startGame () {
@@ -68,7 +68,6 @@ function getQuestions() {
     showQuestion(shuffleQuestions[currentQuestionIndex]);
     showAnswers(shuffleQuestions[currentQuestionIndex]);
 }
-
 // function to add question text to question element
 function showQuestion(question) {
     questionEl.innerText = question.question;
@@ -82,14 +81,16 @@ function showAnswers() {
     buttonD.innerText = currentAnswers.textd;
 }
 
+
 // questions & answers array
 var questions = [
     {
         question:"What does HTML stand for?",
-        texta:"Hypertool Machine Language",
+        texta: "Hypertool Machine Language",
         textb: "Hypertext Markup Language",
         textc: "Hypertech Multi Learning",
         textd: "Hypertone Margin Learning",
+        correct: "b"
     },
     {
         question: 'Which is the most common coding language?', 
@@ -97,6 +98,7 @@ var questions = [
         textb: "Ruby",
         textc: "PHP",
         textd: "Assembly",
+        correct: "a"
     },
     {
         question: "Which naming convention is being used: codeQuiz?",
@@ -104,6 +106,7 @@ var questions = [
         textb: "pascal case",
         textc: "snake case",
         textd: "camel case",
+        correct: "d"
     },
     {
         question: "What does NaN mean, and what is it's data type?",
@@ -111,5 +114,6 @@ var questions = [
         textb: "not a number, number",
         textc: "non attribute number, string",
         textd: "nominal attached number, ordinary",
+        correct: "b"
     }
 ];
