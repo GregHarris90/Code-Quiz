@@ -15,25 +15,32 @@ var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
 
+// Timer elements
 var timerInterval;
 var secondsLeft = 76; 
 
+// Question Answer elements
 var questionEl = document.getElementById("question");
 var answersEl = document.getElementById("answers");
-let shuffleQuestions, currentQuestionIndex
+var shuffleQuestions, currentQuestionIndex
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
 
 // function to start game
 function startGame () {
-    // hides openpage & unhides gamepage
+    // hides openpage
     openpageEl.classList.add("hide");
+    // sets question index at 0
     currentQuestionIndex = 0
+    // shuffles questions in index
     shuffleQuestions = questions.sort(() => Math.random() - .5);
+    // unhides game-page
     gamepageEl.classList.remove("hide");
+    //runs getQuestions function
     getQuestions();
 
+    // starts timer
     timerInterval = setInterval(function() {
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds left";
@@ -45,10 +52,12 @@ function startGame () {
 
 }
 
+// function to grab questions
 function getQuestions() {
     showQuestion(shuffleQuestions[currentQuestionIndex]);
 }
 
+// function to add questions to question element
 function showQuestion(question) {
     questionEl.innerText = question.question;
 }
