@@ -19,13 +19,24 @@ var gamepageEl = document.getElementById("gamepage");
 var timerInterval;
 var secondsLeft = 76; 
 
-// Question Answer elements
+// Question elements
 var questionEl = document.getElementById("question");
-var answersEl = document.getElementById("answers");
-var shuffleQuestions, currentQuestionIndex
+var shuffleQuestions;
+var currentQuestionIndex;
+
+// Answer elements
+var buttonA = document.getElementById("btn-a");
+var buttonB = document.getElementById("btn-b");
+var buttonC = document.getElementById("btn-c");
+var buttonD = document.getElementById("btn-d");
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
+
+var buttonA = document.getElementById("btn-a");
+var buttonB = document.getElementById("btn-b");
+var buttonC = document.getElementById("btn-c");
+var buttonD = document.getElementById("btn-d");
 
 // function to start game
 function startGame () {
@@ -52,72 +63,53 @@ function startGame () {
 
 }
 
-// function to grab questions
+// function to getQuestions
 function getQuestions() {
     showQuestion(shuffleQuestions[currentQuestionIndex]);
+    showAnswers(shuffleQuestions[currentQuestionIndex]);
 }
 
-// function to add questions to question element
+// function to add question text to question element
 function showQuestion(question) {
     questionEl.innerText = question.question;
+    }
+// function to add answer text to buttons
+function showAnswers(texta) {
+    var currentAnswers = questions[currentQuestionIndex]
+    buttonA.innerText = currentAnswers.texta;
+    buttonB.innerText = currentAnswers.textb;
+    buttonC.innerText = currentAnswers.textc;
+    buttonD.innerText = currentAnswers.textd;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // questions & answers array
 var questions = [
     {
         question:"What does HTML stand for?",
-        answers: [
-            { text: "Hypertool Machine Language", correct: false},
-            { text: "Hypertext Markup Language", correct: true},
-            { text: "Hypertech Multi Learning", correct: false},
-            { text: "Hypertone Margin Learning", correct: false},
-        ]
+        texta:"Hypertool Machine Language",
+        textb: "Hypertext Markup Language",
+        textc: "Hypertech Multi Learning",
+        textd: "Hypertone Margin Learning",
     },
     {
-        question: 'Which is the most common coding language?',
-        answers: [
-            { text: "JavaScript", correct: true},
-            { text: "Ruby", correct: false},
-            { text: "PHP", correct: false},
-            { text: "Assembly", correct: false},
-        ]
+        question: 'Which is the most common coding language?', 
+        texta: "JavaScript",
+        textb: "Ruby",
+        textc: "PHP",
+        textd: "Assembly",
     },
     {
         question: "Which naming convention is being used: codeQuiz?",
-        answers: [
-            { text: "gorilla case", correct: false},
-            { text: "pascal case", correct: false},
-            { text: "snake case", correct: false},
-            { text: "camel case", correct: true},
-        ]
+        texta: "gorilla case",
+        textb: "pascal case",
+        textc: "snake case",
+        textd: "camel case",
     },
     {
         question: "What does NaN mean, and what is it's data type?",
-        answers: [
-            { text: "never apply number, character", correct: false},
-            { text: "not a number, number", correct: true},
-            { text: "non attribute number, string", correct: false},
-            { text: "nominal attached number, ordinary", correct: false},
-        ]
+        texta: "never apply number, character",
+        textb: "not a number, number",
+        textc: "non attribute number, string",
+        textd: "nominal attached number, ordinary",
     }
 ];
