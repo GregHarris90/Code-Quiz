@@ -14,10 +14,11 @@ var highscoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
+var resultEl = document.getElementById("result");
 
 // Game elements
 var score = 0;
-var correct;
+var correctAnswer;
 
 // Timer elements
 var timerInterval;
@@ -27,6 +28,7 @@ var secondsLeft = 76;
 var questionEl = document.getElementById("question");
 var shuffleQuestions;
 var currentQuestionIndex;
+
 // var lastQuestion = questions.length;
 
 // Answer elements
@@ -71,7 +73,7 @@ function getQuestions() {
 // function to add question text to question element
 function showQuestion(question) {
     questionEl.innerText = question.question;
-    }
+}
 // function to add answer text to buttons
 function showAnswers() {
     var currentAnswers = questions[currentQuestionIndex]
@@ -79,6 +81,25 @@ function showAnswers() {
     buttonB.innerText = currentAnswers.textb;
     buttonC.innerText = currentAnswers.textc;
     buttonD.innerText = currentAnswers.textd;
+
+    // Event listeners on Answer buttons
+    buttonA.addEventListener("click", checkAnswer);
+    buttonB.addEventListener("click", checkAnswer);
+    buttonC.addEventListener("click", checkAnswer);
+    buttonD.addEventListener("click", checkAnswer);
+}
+
+
+// function to check answer
+function checkAnswer (answer) {
+    correctAnswer = questions[currentQuestionIndex].correct;
+
+    if (answer === correct) {
+        score++;
+        "This is correct!";
+        currentQuestionIndex++;
+        getQuestions();
+    }
 }
 
 
