@@ -22,7 +22,7 @@ var correctAnswer;
 
 // Timer elements
 var timerInterval;
-var secondsLeft = 76; 
+var secondsLeft = 76;
 
 // Question elements
 var questionEl = document.getElementById("question");
@@ -41,7 +41,7 @@ var buttonD = document.getElementById("btn-d");
 startButton.addEventListener("click", startGame);
 
 // function to start game
-function startGame () {
+function startGame() {
     // hides openpage
     openpageEl.classList.add("hide");
     // sets question index at 0
@@ -54,14 +54,14 @@ function startGame () {
     getQuestions();
 
     // starts timer
-    timerInterval = setInterval(function() {
+    timerInterval = setInterval(function () {
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds left";
-    
-        if(secondsLeft === 0) {
-          clearInterval(timerInterval);
+
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
         }
-      }, 1000);
+    }, 1000);
 
 }
 
@@ -83,16 +83,23 @@ function showAnswers() {
     buttonD.innerText = currentAnswers.textd;
 
     // Event listeners on Answer buttons
-    buttonA.addEventListener("click", checkAnswer("texta"));
-    buttonB.addEventListener("click", checkAnswer("textb"));
-    buttonC.addEventListener("click", checkAnswer("textc"));
-    buttonD.addEventListener("click", checkAnswer("textd"));
+    buttonA.addEventListener("click", function () {
+        checkAnswer("a");
+    });
+    buttonB.addEventListener("click", function () {
+        checkAnswer("b");
+    });
+    buttonC.addEventListener("click", function () {
+        checkAnswer("c");
+    });
+    buttonD.addEventListener("click", function () {
+        checkAnswer("d");
+    });
 }
 
-
 // function to check answer
-function checkAnswer (answer) {
-    answer = questions[currentQuestionIndex].correct;
+function checkAnswer(answer) {
+    var correctAnswer = questions[currentQuestionIndex].correct;
 
     if (answer === correctAnswer) {
         score++;
@@ -100,14 +107,16 @@ function checkAnswer (answer) {
         currentQuestionIndex++;
         getQuestions();
     }
+    console.log(correctAnswer);
+    console.log(answer);
 }
 
-console.log(correctAnswer);
+// console.log(correctAnswer);
 
 // questions & answers array
 var questions = [
     {
-        question:"What does HTML stand for?",
+        question: "What does HTML stand for?",
         texta: "Hypertool Machine Language",
         textb: "Hypertext Markup Language",
         textc: "Hypertech Multi Learning",
@@ -115,7 +124,7 @@ var questions = [
         correct: "b"
     },
     {
-        question: 'Which is the most common coding language?', 
+        question: 'Which is the most common coding language?',
         texta: "JavaScript",
         textb: "Ruby",
         textc: "PHP",
