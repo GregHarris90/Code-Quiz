@@ -10,6 +10,7 @@
 
 // DOM elements
 var startButton = document.getElementById("start-btn");
+var currentScore = document.getElementById("score");
 var highscoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
