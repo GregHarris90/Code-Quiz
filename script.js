@@ -3,18 +3,19 @@
 // starts timer X
 // presents question/answers X
 // logs answers
-// display correct or incorrect
-// if incorrect subtract time
+// display correct or incorrect X
+// if incorrect subtract time X
 // time end or questions done = game over
 // add intials to score
 
 // DOM elements
 var startButton = document.getElementById("start-btn");
-var currentScore = document.getElementById("score");
+var currentScore = document.getElementById("currentScore");
 var highscoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
+var scorepageEl = document.getElementById("finalscore-page");
 var resultEl = document.getElementById("result");
 
 // Game elements
@@ -75,6 +76,7 @@ function startGame() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
+            endGame();
         }
     }, 1000);
 
@@ -82,9 +84,15 @@ function startGame() {
 
 // function to getQuestions
 function getQuestions() {
-    showQuestion(shuffleQuestions[currentQuestionIndex]);
-    showAnswers(shuffleQuestions[currentQuestionIndex]);
+
+    if (currentQuestionIndex === 6) {
+        endGame();
+    } else {
+        showQuestion(shuffleQuestions[currentQuestionIndex]);
+        showAnswers(shuffleQuestions[currentQuestionIndex]);
+    }
 }
+
 // function to add question text to question element
 function showQuestion(question) {
     questionEl.innerText = question.question;
@@ -101,6 +109,7 @@ function showAnswers() {
 // function to check answer
 function checkAnswer(answer) {
     var correctAnswer = questions[currentQuestionIndex].correct;
+    console.log(correctAnswer);
 
     if (answer === correctAnswer) {
         score++;
@@ -109,14 +118,21 @@ function checkAnswer(answer) {
         alert("This is correct!");
         currentQuestionIndex++;
         getQuestions();
-    } else if (answer !== correctAnswer){
-        secondsLeft-=10;
+    } else if (answer !== correctAnswer) {
+        secondsLeft -= 10;
         alert("This is incorrect!");
         currentQuestionIndex++;
         getQuestions();
-    } else 
-    console.log("correct answer:", correctAnswer);
-    console.log("selected answer:", answer);
+
+        console.log("correct answer:", correctAnswer);
+        console.log("selected answer:", answer);
+    }
+}
+
+// ends game displays score screen
+function endGame() {
+    gamepageEl.classList.add("hide");
+    scorepageEl.classList.remove("hide");
 }
 
 // questions & answers array
