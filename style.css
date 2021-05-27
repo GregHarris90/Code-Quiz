@@ -35,6 +35,8 @@ body {
     padding: 5px;}
 
 #gameover h1 {
+    display: flex;
+
     border-width: 15px;
     border-radius: 15px;
     text-align: center;
@@ -76,7 +78,6 @@ ul {
     background-color: #4CAF50; 
     color: white;}
 
-
 #highscore-btn button {
     position: absolute;
     margin: auto;
@@ -89,11 +90,10 @@ ul {
     border-radius: 15px;
     cursor: pointer;
     outline: none;}
-    
+
 #highscore-btn button:hover {
     background-color: #4CAF50; 
     color: white;}
-        
 
 #restart-btn button {
     float: right;

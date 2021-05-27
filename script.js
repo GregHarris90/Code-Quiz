@@ -20,7 +20,7 @@ var finalScoreEl = document.getElementById("finalScore");
 var resultEl = document.getElementById("result");
 
 // Game elements
-var score = 0;
+var score;
 var correctAnswer;
 
 // Timer elements
@@ -80,6 +80,10 @@ function startGame() {
     shuffleQuestions = questions.sort(() => Math.random() - .5);
     // unhides game-page
     gamepageEl.classList.remove("hide");
+    // resets score, currentScore, and secondsLeft
+    score = 0;
+    currentScore.textContent = score
+    secondsLeft = 76;
     //runs getQuestions function
     getQuestions();
 
@@ -128,12 +132,12 @@ function checkAnswer(answer) {
         score++;
         console.log(score)
         currentScore.textContent = score
-        alert("This is correct!");
+        alert("This is correct! (+1 to score)");
         currentQuestionIndex++;
         getQuestions();
     } else if (answer !== correctAnswer) {
         secondsLeft -= 10;
-        alert("This is incorrect!");
+        alert("This is incorrect! (-10 seconds)");
         currentQuestionIndex++;
         getQuestions();
 
@@ -146,15 +150,20 @@ function checkAnswer(answer) {
 function endGame() {
     gamepageEl.classList.add("hide");
     scorepageEl.classList.remove("hide");
-    finalScoreEl.textContent = score + " questions correct out of 6";
+    alert("END OF GAME!" + " You got " + score + " out of 6 questions correct! ");
+    finalScoreEl.textContent = score + "/6";
 }
 
+// restarts game 
 function restartGame() {
     console.log("RS Clicked!");
-    var score = 0;
-    var secondsLeft = 76;
-    currentQuestionIndex = 0
-
+    // hides game & score page
+    gamepageEl.classList.add("hide");
+    scorepageEl.classList.add("hide");
+    // resets question array
+    currentQuestionIndex = 0;
+    // restarts game
+    startGame();
 }
 
 function viewHighScore() {
