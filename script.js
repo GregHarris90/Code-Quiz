@@ -109,12 +109,12 @@ function checkAnswer(answer) {
         alert("This is correct!");
         currentQuestionIndex++;
         getQuestions();
-    } else {
+    } else if (answer !== correctAnswer){
         secondsLeft-=10;
         alert("This is incorrect!");
         currentQuestionIndex++;
         getQuestions();
-    }
+    } else 
     console.log("correct answer:", correctAnswer);
     console.log("selected answer:", answer);
 }
