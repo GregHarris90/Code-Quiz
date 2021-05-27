@@ -146,7 +146,7 @@ function checkAnswer(answer) {
 function endGame() {
     gamepageEl.classList.add("hide");
     scorepageEl.classList.remove("hide");
-    finalScoreEl.textContent = score
+    finalScoreEl.textContent = score + " questions correct out of 6";
 }
 
 function restartGame() {
