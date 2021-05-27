@@ -20,12 +20,33 @@ body {
     text-align: center;
     font-size: larger;}
 
+#header-end {
+    color: rgb(33, 85, 145);
+    padding: 5px;
+    border-width: 15px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: larger;}
+
 #rules {
     color: rgb(33, 85, 145);
     font-size: 25px;
     font-weight: bold;
     padding: 5px;}
-    
+
+#gameover h1 {
+    border-width: 15px;
+    border-radius: 15px;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+    background-color: white;
+    margin-top: 35px;
+    margin: 15px;
+    font-weight: bold;
+    margin-top: 50px;
+    padding: 15px;}
+
 ul {
     color: white;
     font-size: large;

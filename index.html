@@ -70,14 +70,22 @@
     <!-- FinalScore-page (hidden by default) -->
     <main id="finalscore-page" class="hide">
 
-        <header class="score-time">
-            <div id="highscore"><button>View Highscore</button></div>
-            <div id="restart"><button>Play Again</button></div>
+        <section class="score-time">
+            <div id="highscore-btn"><button>View Highscore</button></div>
+            <div id="restart-btn"><button>Play Again</button></div>
+        </section>
+
+        <header>
+            <div class="text-top" id="header-end">
+                <div>
+                    <h1 id="gameover">Game Over</h1>
+                </div>
+            </div>
         </header>
 
         <section>
             <div>
-                <div id="score">Your Final Score:<span id="finalScore"></span></div>
+                <div id="score">Your Final Score: <span id="finalScore"></span></div>
             </div>
         </section>
     </main>

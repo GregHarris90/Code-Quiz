@@ -2,10 +2,10 @@
 // switches from main-page (hide) to game-page (unhide) X
 // starts timer X
 // presents question/answers X
-// logs answers
+// logs answers X
 // display correct or incorrect X
 // if incorrect subtract time X
-// time end or questions done = game over
+// time end or questions done = game over X
 // add intials to score
 
 // DOM elements
@@ -16,11 +16,11 @@ var timerEl = document.getElementById("countdown");
 var openpageEl = document.getElementById("openpage");
 var gamepageEl = document.getElementById("gamepage");
 var scorepageEl = document.getElementById("finalscore-page");
+var finalScoreEl = document.getElementById("finalScore");
 var resultEl = document.getElementById("result");
 
 // Game elements
 var score = 0;
-console.log(score);
 var correctAnswer;
 
 // Timer elements
@@ -55,6 +55,7 @@ buttonC.addEventListener("click", function () {
 buttonD.addEventListener("click", function () {
     checkAnswer("d");
 });
+
 
 // function to start game
 function startGame() {
@@ -133,9 +134,20 @@ function checkAnswer(answer) {
 function endGame() {
     gamepageEl.classList.add("hide");
     scorepageEl.classList.remove("hide");
+    finalScoreEl.textContent = score
 }
 
-// questions & answers array
+function restartGame() {
+    
+    var score = 0;
+    var secondsLeft = 76;
+    currentQuestionIndex = 0
+
+
+
+}
+
+// questions & answers array (currently 6 questions)
 var questions = [
     {
         question: "What does HTML stand for?",
