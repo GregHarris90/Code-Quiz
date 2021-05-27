@@ -34,7 +34,7 @@ var currentQuestionIndex;
 
 // var lastQuestion = questions.length;
 
-// Answer elements
+// Answer button elements
 var buttonA = document.getElementById("btn-a");
 var buttonB = document.getElementById("btn-b");
 var buttonC = document.getElementById("btn-c");
@@ -42,7 +42,7 @@ var buttonD = document.getElementById("btn-d");
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
-// Event listeners on Answer buttons
+// Event listeners on Answer buttons (A-B-C-D)
 buttonA.addEventListener("click", function () {
     checkAnswer("a");
 });
@@ -56,6 +56,19 @@ buttonD.addEventListener("click", function () {
     checkAnswer("d");
 });
 
+//Endgame button elements
+var buttonHS = document.getElementById("highscore-btn");
+var buttonRS = document.getElementById("restart-btn");
+
+// Event listener on highscore button
+buttonHS.addEventListener("click", function () {
+    viewHighScore();
+})
+
+// Event listener on restart button
+buttonRS.addEventListener("click", function () {
+    restartGame();
+})
 
 // function to start game
 function startGame() {
