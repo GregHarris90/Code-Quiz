@@ -77,7 +77,7 @@ ul {
     color: white;}
 
 
-#highscore button {
+#highscore-btn button {
     position: absolute;
     margin: auto;
     font-size: 15px;
@@ -90,12 +90,12 @@ ul {
     cursor: pointer;
     outline: none;}
     
-#highscore button:hover {
+#highscore-btn button:hover {
     background-color: #4CAF50; 
     color: white;}
         
 
-#restart button {
+#restart-btn button {
     float: right;
     margin: auto;
     font-size: 15px;
@@ -108,7 +108,7 @@ ul {
     cursor: pointer;
     outline: none;}
     
-#restart button:hover {
+#restart-btn button:hover {
     background-color: #4CAF50; 
     color: white;}
 

@@ -93,7 +93,6 @@ function startGame() {
             endGame();
         }
     }, 1000);
-
 }
 
 // function to getQuestions
@@ -151,12 +150,15 @@ function endGame() {
 }
 
 function restartGame() {
-    
+    console.log("RS Clicked!");
     var score = 0;
     var secondsLeft = 76;
     currentQuestionIndex = 0
 
+}
 
+function viewHighScore() {
+    console.log("HS Clicked!");
 
 }
 
