@@ -87,11 +87,7 @@ ul {
     }
 
 #score {
-    /* float: left; */
-    /* right: 250px; */
     font-weight: bolder;
-    /* border-style: solid;
-    border-color: rgb(33, 85, 145); */
     border-width: 5px;
     border-radius: 15px;
     background: white;

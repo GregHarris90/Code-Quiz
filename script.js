@@ -19,6 +19,7 @@ var resultEl = document.getElementById("result");
 
 // Game elements
 var score = 0;
+console.log(score);
 var correctAnswer;
 
 // Timer elements
@@ -40,6 +41,19 @@ var buttonD = document.getElementById("btn-d");
 
 // Event listener on Start button
 startButton.addEventListener("click", startGame);
+// Event listeners on Answer buttons
+buttonA.addEventListener("click", function () {
+    checkAnswer("a");
+});
+buttonB.addEventListener("click", function () {
+    checkAnswer("b");
+});
+buttonC.addEventListener("click", function () {
+    checkAnswer("c");
+});
+buttonD.addEventListener("click", function () {
+    checkAnswer("d");
+});
 
 // function to start game
 function startGame() {
@@ -82,20 +96,6 @@ function showAnswers() {
     buttonB.innerText = currentAnswers.textb;
     buttonC.innerText = currentAnswers.textc;
     buttonD.innerText = currentAnswers.textd;
-
-    // Event listeners on Answer buttons
-    buttonA.addEventListener("click", function () {
-        checkAnswer("a");
-    });
-    buttonB.addEventListener("click", function () {
-        checkAnswer("b");
-    });
-    buttonC.addEventListener("click", function () {
-        checkAnswer("c");
-    });
-    buttonD.addEventListener("click", function () {
-        checkAnswer("d");
-    });
 }
 
 // function to check answer
@@ -104,15 +104,20 @@ function checkAnswer(answer) {
 
     if (answer === correctAnswer) {
         score++;
+        console.log(score)
+        currentScore.textContent = score
         alert("This is correct!");
         currentQuestionIndex++;
         getQuestions();
+    } else {
+        secondsLeft-=10;
+        alert("This is incorrect!");
+        currentQuestionIndex++;
+        getQuestions();
     }
-    console.log(correctAnswer);
-    console.log(answer);
+    console.log("correct answer:", correctAnswer);
+    console.log("selected answer:", answer);
 }
-
-// console.log(correctAnswer);
 
 // questions & answers array
 var questions = [
@@ -147,5 +152,21 @@ var questions = [
         textc: "non attribute number, string",
         textd: "nominal attached number, ordinary",
         correct: "b"
+    },
+    {
+        question: "Who developed the React JS Framework?",
+        texta: "Facebook",
+        textb: "Google",
+        textc: "Amazon",
+        textd: "Twitter",
+        correct: "a"
+    },
+    {
+        question: "What does CSS stand for?",
+        texta: "Color Style Syntax",
+        textb: "Circular Sheet Styles",
+        textc: "Cascading Style Sheets",
+        textd: "Coding Style Sheets",
+        correct: "c"
     }
 ];
