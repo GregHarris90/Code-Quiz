@@ -5,7 +5,6 @@ body {
     background-color: rgb(243, 158, 0);}
 
 .text-top {
-    border-style: solid;
     border-color: rgb(33, 85, 145);
     border-width: 15px;
     border-radius: 15px;
@@ -15,13 +14,14 @@ body {
 }
 
 #header {
+    border-width: 15px;
+    border-radius: 15px;
     color: rgb(33, 85, 145);
     padding: 5px;
     text-align: center;
     font-size: larger;}
 
 #header-end {
-    color: rgb(33, 85, 145);
     padding: 5px;
     border-width: 15px;
     border-radius: 15px;
@@ -36,7 +36,6 @@ body {
 
 #gameover h1 {
     display: flex;
-
     border-width: 15px;
     border-radius: 15px;
     text-align: center;
@@ -95,6 +94,34 @@ ul {
     background-color: #4CAF50; 
     color: white;}
 
+#initials {
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 35px;
+    font-size: 25px;
+    margin: 15px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    padding: 15px;}
+
+#submit-btn button {
+    margin-top: 35px;
+    position: inherit;
+    font-size: 25px;
+    color: rgb(33, 85, 145);
+    font-weight: bold;
+    margin: 15px;
+    padding: 15px;
+    border: 5px solid rgb(33, 85, 145);
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;}
+
+#submit-btn button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+
 #restart-btn button {
     float: right;
     margin: auto;
@@ -114,7 +141,6 @@ ul {
 
 #timer {
     float: right;
-    right: 250px;
     font-weight: bolder;
     border-style: solid;
     border-color: rgb(33, 85, 145);
@@ -123,9 +149,12 @@ ul {
     background: white;
     padding: 10px;
     margin: 15px;
+    margin-top: 50px;
     }
 
 #score {
+    display: flex;
+    float: inline-end;
     font-weight: bolder;
     border-width: 5px;
     border-radius: 15px;
@@ -156,7 +185,6 @@ ul {
     font-size: 25px;
     margin: 15px;
     font-weight: bold;
-    margin-top: 50px;
     padding: 15px;}
     
 #answers button {

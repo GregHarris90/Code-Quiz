@@ -148,10 +148,11 @@ function checkAnswer(answer) {
 
 // ends game displays score screen
 function endGame() {
+    clearInterval(timerInterval);
     gamepageEl.classList.add("hide");
     scorepageEl.classList.remove("hide");
     alert("END OF GAME!" + " You got " + score + " out of 6 questions correct! ");
-    finalScoreEl.textContent = score + "/6";
+    finalScoreEl.textContent = " = " + score + " / 6";
 }
 
 // restarts game 
@@ -168,6 +169,9 @@ function restartGame() {
 
 function viewHighScore() {
     console.log("HS Clicked!");
+    scorepageEl.classList.add("hide");
+    highscorepage.classList.remove("hide");
+
 
 }
 
