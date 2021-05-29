@@ -1,15 +1,4 @@
-// click start button to start game X
-// switches from main-page (hide) to game-page (unhide) X
-// starts timer X
-// presents question/answers X
-// logs answers X
-// display correct or incorrect X
-// if incorrect subtract time X
-// time end or questions done = game over X
-// add intials to score
-
-// DOM elements
-var startButton = document.getElementById("start-btn");
+// DOM ELEMENTS //
 var currentScore = document.getElementById("currentScore");
 var highscoreEl = document.getElementById("highscore");
 var timerEl = document.getElementById("countdown");
@@ -19,7 +8,12 @@ var scorepageEl = document.getElementById("finalscore-page");
 var finalScoreEl = document.getElementById("finalScore");
 var resultEl = document.getElementById("result");
 var inputName = document.getElementById("initials");
+
+// Button elements
+var startBtn = document.getElementById("start-btn");
 var submitScoreBtn = document.getElementById("submit-score");
+var highScoreBtn = document.getElementById("highscore-btn");
+var restartBtn = document.getElementById("restart-btn");
 
 // Game elements
 var score;
@@ -34,13 +28,29 @@ var questionEl = document.getElementById("question");
 var shuffleQuestions;
 var currentQuestionIndex;
 
+// Checks localStorage for highscores
 if(!localStorage.getItem("highscores")) {
     var highscores = []
 } else {
     var highscores = localStorage.getItem("highscores")
 }
 
+
+// Event listener on (Start Button)
+startBtn.addEventListener("click", startGame);
+
+// Event listener on (HighScore Button) 
+highScoreBtn.addEventListener("click", function () {
+    viewHighScore();
+});
+
+// Event listener on (Submit Score Button)
 submitScoreBtn.addEventListener("click", saveScore);
+
+// Event listener on restart button
+restartBtn.addEventListener("click", function () {
+    restartGame();
+});
 
 // Answer button elements
 var buttonA = document.getElementById("btn-a");
@@ -48,9 +58,7 @@ var buttonB = document.getElementById("btn-b");
 var buttonC = document.getElementById("btn-c");
 var buttonD = document.getElementById("btn-d");
 
-// Event listener on Start button
-startButton.addEventListener("click", startGame);
-// Event listeners on Answer buttons (A-B-C-D)
+// Event listeners on (Answer buttons) (A-B-C-D)
 buttonA.addEventListener("click", function () {
     checkAnswer("a");
 });
@@ -64,19 +72,8 @@ buttonD.addEventListener("click", function () {
     checkAnswer("d");
 });
 
-//Endgame button elements
-var buttonHS = document.getElementById("highscore-btn");
-var buttonRS = document.getElementById("restart-btn");
 
-// Event listener on highscore button
-buttonHS.addEventListener("click", function () {
-    viewHighScore();
-})
-
-// Event listener on restart button
-buttonRS.addEventListener("click", function () {
-    restartGame();
-})
+// GAME FUNCTIONS //
 
 // function to start game
 function startGame() {
@@ -106,9 +103,8 @@ function startGame() {
     }, 1000);
 }
 
-// function to getQuestions
+// function to get questions
 function getQuestions() {
-
     if (currentQuestionIndex === 6) {
         clearInterval(timerInterval);
         endGame();
@@ -122,6 +118,7 @@ function getQuestions() {
 function showQuestion(question) {
     questionEl.innerText = question.question;
 }
+
 // function to add answer text to buttons
 function showAnswers() {
     var currentAnswers = questions[currentQuestionIndex]
@@ -148,13 +145,10 @@ function checkAnswer(answer) {
         alert("This is incorrect! (-10 seconds)");
         currentQuestionIndex++;
         getQuestions();
-
-        console.log("correct answer:", correctAnswer);
-        console.log("selected answer:", answer);
     }
 }
 
-// ends game displays score screen
+// function to ends game / display score screen
 function endGame() {
     secondsLeft = 0;
     gamepageEl.classList.add("hide");
@@ -163,7 +157,7 @@ function endGame() {
     finalScoreEl.textContent = " = " + score + " / 6";
 }
 
-// restarts game 
+// function to restart game 
 function restartGame() {
     // hides game & score page
     gamepageEl.classList.add("hide");
@@ -177,14 +171,18 @@ function restartGame() {
     startGame();
 }
 
+// function to save score
 function saveScore() {
     var savedName = inputName.value
     var newScore = {name: savedName, score: score}
 
-    highscores.push(newScore);
-    localStorage.setItem("highscores", highscores);
+    console.log(savedName);
+    console.log(newScore);
+
+    localStorage.setItem("highscores", JSON.stringify(newScore));
 }
 
+// function to display highscores
 function viewHighScore() {
     console.log("HS Clicked!");
     scorepageEl.classList.add("hide");
