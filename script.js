@@ -1,13 +1,15 @@
 // DOM ELEMENTS //
 var currentScore = document.getElementById("currentScore");
-var highscoreEl = document.getElementById("highscore");
-var timerEl = document.getElementById("countdown");
-var openpageEl = document.getElementById("openpage");
-var gamepageEl = document.getElementById("gamepage");
-var scorepageEl = document.getElementById("finalscore-page");
 var finalScoreEl = document.getElementById("finalScore");
 var resultEl = document.getElementById("result");
-var inputName = document.getElementById("initials");
+var inputNameEl = document.getElementById("initials");
+var timerEl = document.getElementById("countdown");
+
+// PAGES //
+var openpageEl = document.getElementById("open-page");
+var gamepageEl = document.getElementById("game-page");
+var highscoreEl = document.getElementById("highscore-page");
+var scorepageEl = document.getElementById("finalscore-page");
 
 // Button elements
 var startBtn = document.getElementById("start-btn");
@@ -28,13 +30,12 @@ var questionEl = document.getElementById("question");
 var shuffleQuestions;
 var currentQuestionIndex;
 
-// Checks localStorage for highscores
+// Checks localStorage for highScores
 if(!localStorage.getItem("highscores")) {
     var highscores = []
 } else {
     var highscores = localStorage.getItem("highscores")
 }
-
 
 // Event listener on (Start Button)
 startBtn.addEventListener("click", startGame);
@@ -45,7 +46,10 @@ highScoreBtn.addEventListener("click", function () {
 });
 
 // Event listener on (Submit Score Button)
-submitScoreBtn.addEventListener("click", saveScore);
+submitScoreBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    saveScore();
+});
 
 // Event listener on restart button
 restartBtn.addEventListener("click", function () {
@@ -173,16 +177,20 @@ function restartGame() {
 
 // function to save score
 function saveScore() {
-    var savedName = inputName.value
+    var savedName = inputNameEl.value
     var newScore = {name: savedName, score: score}
-
-    console.log(savedName);
-    console.log(newScore);
-
     localStorage.setItem("highscores", JSON.stringify(newScore));
 }
 
-// function to display highscores
+function renderLastScore() {
+    var lastScore = JSON.parse(localStorage.getItem("highscores"));
+
+    if (lastScore !== null) {
+
+    }
+}
+
+// function to display highScore page
 function viewHighScore() {
     console.log("HS Clicked!");
     scorepageEl.classList.add("hide");
