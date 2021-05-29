@@ -4,16 +4,25 @@ Homework assignment for Week 4 of Coding Bootcamp!
 
 ### Table of Contents 
 
-1) The Repository
-2) User Story
-3) Code Quiz
-4) Overall Conclusion
+* [Repository](#Repository) 
+* [Technology Used](#Technology-Used) 
+* [User Story](#User-Story)
+* [Code Quiz](#Code-Quiz)
+* [Contact Info](#Contact-Info)
+* [Conclusion](#Conclusion)
 
-# The Repository
+# Repository
 
 - This repository is a web application for a 'Coding Quiz Challenge' to test one's basic knowlegde on this topic!
 
-# User Story
+*LINK TO DEPLOYED WEBSITE*
+
+
+# Technology-Used
+
+- To build this application I used html, css, and javascript while using the WebAPIs to make a Coding Quiz Game for users to play!
+
+# User-Story
 
 - Once "Start" button is pushed, a timer will start and the user will be asked a series of questions. 
 
@@ -27,9 +36,9 @@ Homework assignment for Week 4 of Coding Bootcamp!
 
 - After viewing score the user can clear their saved score, go back, and play again!
 
-# Code Quiz
+# Code-Quiz
 
-### Web Application
+### Web-Application
 
 *Main Page*
 ![Front-page](https://user-images.githubusercontent.com/73864182/105461199-c274db80-5c41-11eb-96e4-3a1ddb499adc.png)
@@ -70,8 +79,14 @@ Homework assignment for Week 4 of Coding Bootcamp!
 *Clear Score 2*
 ![Question-ClearScore2](https://user-images.githubusercontent.com/73864182/120062720-69b2b680-c018-11eb-85ab-73f41fac7a84.png)
 
+*END OF APPLICATION*
 
-# Overall Conclusion
+# Contact-Info:
+
+- Name: Greg Harris
+- Email: ghcoder90@gmail.com
+
+# Conclusion
 
 ### 01/21/21
 
@@ -99,4 +114,4 @@ Homework assignment for Week 4 of Coding Bootcamp!
 
 - I was able to finally finish the questions, score, all the button functions, and saving the user's initials into local storage.
 
-- I'm really happy I was finally able to complete this project and will be requesting a regrade on it!
+- I'm really happy I was finally able to complete this project, applying everything that I've learned over these last few months, and will be requesting a regrade on it!
