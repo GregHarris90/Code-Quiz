@@ -29,6 +29,48 @@ body {
     text-align: center;
     font-size: larger;}
 
+#highscore-card{
+    font-weight: bolder;
+    border-width: 5px;
+    border-radius: 15px;
+    background: white;
+    padding: 10px;
+    margin: 15px;}
+
+#clear button {
+    float: right;
+    margin: auto;
+    font-size: 15px;
+    color: rgb(33, 85, 145);
+    font-weight:bold;
+    margin: 15px;
+    padding: 15px;
+    border: 5px solid rgb(33, 85, 145);
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;}
+
+#clear button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+
+#go-back button {
+    float: right;
+    margin: auto;
+    font-size: 15px;
+    color: rgb(33, 85, 145);
+    font-weight:bold;
+    margin: 15px;
+    padding: 15px;
+    border: 5px solid rgb(33, 85, 145);
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;}
+
+#go-back button:hover {
+    background-color: #4CAF50; 
+    color: white;}
+
 #rules {
     color: rgb(33, 85, 145);
     font-size: 25px;

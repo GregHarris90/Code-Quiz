@@ -85,7 +85,7 @@
         <section>
             <div id="submit-btn">
                 <input id="initials" type="text" placeholder="Enter your initials!">
-                <button id="submit-score">Submit Score</button>
+                <button id="submit-score-btn">Save Score</button>
             </div>
             <div>
                 <div id="score">Your Final Score <span id="finalScore"></span></div>
@@ -98,12 +98,16 @@
 
         <div>
             <section>
-                <!-- build out the highscore page -->
-                <div class="card">
-                    <h2>Last Saved Grade</h2>
-                    <p>Student's Name: <span id="saved-name"></span></p>
-                    <p>Grade: <span id="saved-grade"></span></p>
-                    <p>Comment: <span id="saved-comment"></span></p>
+                <div id="highscore-card" class="card">
+                    <div id="go-back">
+                        <button>Go Back</button>
+                    </div>
+                    <div id="clear">
+                        <button>Clear Score</button>
+                    </div>
+                    <h2>Highscore</h2>
+                    <p>Your Name: <span id="saved-name"></span></p>
+                    <p>Your Score: <span id="saved-score"></span></p>
                 </div>
             </section>
         </div>

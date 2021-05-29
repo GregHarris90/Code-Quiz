@@ -6,16 +6,18 @@ var inputNameEl = document.getElementById("initials");
 var timerEl = document.getElementById("countdown");
 
 // PAGES //
-var openpageEl = document.getElementById("open-page");
-var gamepageEl = document.getElementById("game-page");
-var highscoreEl = document.getElementById("highscore-page");
-var scorepageEl = document.getElementById("finalscore-page");
+var openPageEl = document.getElementById("open-page");
+var gamePageEl = document.getElementById("game-page");
+var highScoreEl = document.getElementById("highscore-page");
+var scorePageEl = document.getElementById("finalscore-page");
 
 // Button elements
 var startBtn = document.getElementById("start-btn");
-var submitScoreBtn = document.getElementById("submit-score");
+var submitScoreBtn = document.getElementById("submit-score-btn");
 var highScoreBtn = document.getElementById("highscore-btn");
 var restartBtn = document.getElementById("restart-btn");
+var goBackBtn = document.getElementById("go-back");
+var clearBtn = document.getElementById("clear");
 
 // Game elements
 var score;
@@ -32,13 +34,15 @@ var currentQuestionIndex;
 
 // Checks localStorage for highScores
 if(!localStorage.getItem("highscores")) {
-    var highscores = []
+    var highScores = []
 } else {
-    var highscores = localStorage.getItem("highscores")
+    var highScores = localStorage.getItem("highscores")
 }
 
 // Event listener on (Start Button)
-startBtn.addEventListener("click", startGame);
+startBtn.addEventListener("click", function () {
+    startGame();
+});
 
 // Event listener on (HighScore Button) 
 highScoreBtn.addEventListener("click", function () {
@@ -46,14 +50,22 @@ highScoreBtn.addEventListener("click", function () {
 });
 
 // Event listener on (Submit Score Button)
-submitScoreBtn.addEventListener("click", function(event) {
-    event.preventDefault();
+submitScoreBtn.addEventListener("click", function () {
     saveScore();
 });
 
-// Event listener on restart button
+// Event listener on (Restart Button)
 restartBtn.addEventListener("click", function () {
     restartGame();
+});
+
+// Event listener on (Go Back Button)
+goBackBtn.addEventListener("click", function () {
+    goBack();
+});
+
+clearBtn.addEventListener("click", function () {
+    clearScore();
 });
 
 // Answer button elements
@@ -76,19 +88,18 @@ buttonD.addEventListener("click", function () {
     checkAnswer("d");
 });
 
-
 // GAME FUNCTIONS //
 
 // function to start game
 function startGame() {
     // hides openpage
-    openpageEl.classList.add("hide");
+    openPageEl.classList.add("hide");
     // sets question index at 0
     currentQuestionIndex = 0
     // shuffles questions in index
     shuffleQuestions = questions.sort(() => Math.random() - .5);
     // unhides game-page
-    gamepageEl.classList.remove("hide");
+    gamePageEl.classList.remove("hide");
     // resets score, currentScore, and secondsLeft
     score = 0;
     currentScore.textContent = score
@@ -155,8 +166,8 @@ function checkAnswer(answer) {
 // function to ends game / display score screen
 function endGame() {
     secondsLeft = 0;
-    gamepageEl.classList.add("hide");
-    scorepageEl.classList.remove("hide");
+    gamePageEl.classList.add("hide");
+    scorePageEl.classList.remove("hide");
     alert("END OF GAME!" + " You got " + score + " out of 6 questions correct! ");
     finalScoreEl.textContent = " = " + score + " / 6";
 }
@@ -164,8 +175,8 @@ function endGame() {
 // function to restart game 
 function restartGame() {
     // hides game & score page
-    gamepageEl.classList.add("hide");
-    scorepageEl.classList.add("hide");
+    gamePageEl.classList.add("hide");
+    scorePageEl.classList.add("hide");
     // resets question array
     currentQuestionIndex = 0;
     // resets timer
@@ -180,23 +191,48 @@ function saveScore() {
     var savedName = inputNameEl.value
     var newScore = {name: savedName, score: score}
     localStorage.setItem("highscores", JSON.stringify(newScore));
+    clearField();
 }
 
+// function to render highScores
 function renderLastScore() {
     var lastScore = JSON.parse(localStorage.getItem("highscores"));
+    console.log(lastScore);
 
     if (lastScore !== null) {
-
+        document.getElementById("saved-name").innerHTML = lastScore.name
+        document.getElementById("saved-score").innerHTML = lastScore.score
+    } else {
+        return;
     }
 }
 
 // function to display highScore page
 function viewHighScore() {
-    console.log("HS Clicked!");
-    scorepageEl.classList.add("hide");
-    highscorepage.classList.remove("hide");
+    scorePageEl.classList.add("hide");
+    highScoreEl.classList.remove("hide");
+    renderLastScore();
+}
 
+// function to go back to score page
+function goBack() {
+    highScoreEl.classList.add("hide");
+    scorePageEl.classList.remove("hide");
+}
 
+// function to clear score
+function clearScore() {
+    window.localStorage.clear();
+    if (highScores !== null) {
+        document.getElementById("saved-name").innerHTML = "";
+        document.getElementById("saved-score").innerHTML = "";
+    } else {
+        return;
+    }
+}
+
+function clearField() {
+    inputNameEl.value = "";
 }
 
 // questions & answers array (currently 6 questions)
