@@ -62,9 +62,6 @@ https://gregharris90.github.io/Code-Quiz/
 *End Game Screen 1*
 ![Question-Endgame](https://user-images.githubusercontent.com/73864182/120062722-69b2b680-c018-11eb-82ba-e1f169488949.png)
 
-*End Game Screen 2*
-![Question-Endgame1](https://user-images.githubusercontent.com/73864182/120062723-6a4b4d00-c018-11eb-82e4-e14b8c92a51c.png)
-
 *Save Score*
 ![Question-SaveScore](https://user-images.githubusercontent.com/73864182/120062727-6ae3e380-c018-11eb-8235-e722f553d240.png)
 
@@ -79,6 +76,9 @@ https://gregharris90.github.io/Code-Quiz/
 
 *Clear Score 2*
 ![Question-ClearScore2](https://user-images.githubusercontent.com/73864182/120062720-69b2b680-c018-11eb-85ab-73f41fac7a84.png)
+
+*End Game Screen 2*
+![Question-Endgame1](https://user-images.githubusercontent.com/73864182/120062723-6a4b4d00-c018-11eb-82e4-e14b8c92a51c.png)
 
 *END OF APPLICATION*
 
