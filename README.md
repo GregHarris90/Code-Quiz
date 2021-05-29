@@ -27,15 +27,15 @@ https://gregharris90.github.io/Code-Quiz/
 
 - Once "Start" button is pushed, a timer will start and the user will be asked a series of questions. 
 
-- For every wrong answer 10 seconds will be taken off your timer, if timer hits 0 then you lose.
+- For every wrong answer 10 seconds will be taken off your timer, if timer hits 0 the game ends.
 
 - For every correct answer the user earns a point for their score.
 
-- If a player gets through the questions then they can save their score under their initials. 
+- If a player gets through the questions then they can save their score under their initials/name. 
 
 - Then they can restart the game or view their highscore.
 
-- After viewing score the user can clear their saved score, go back, and play again!
+- After viewing score the user can also clear their saved name/score, go back, and play again!
 
 # Code-Quiz
 
