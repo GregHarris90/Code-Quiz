@@ -18,6 +18,8 @@ var gamepageEl = document.getElementById("gamepage");
 var scorepageEl = document.getElementById("finalscore-page");
 var finalScoreEl = document.getElementById("finalScore");
 var resultEl = document.getElementById("result");
+var inputName = document.getElementById("initials");
+var submitScoreBtn = document.getElementById("submit-score");
 
 // Game elements
 var score;
@@ -32,7 +34,13 @@ var questionEl = document.getElementById("question");
 var shuffleQuestions;
 var currentQuestionIndex;
 
-// var lastQuestion = questions.length;
+if(!localStorage.getItem("highscores")) {
+    var highscores = []
+} else {
+    var highscores = localStorage.getItem("highscores")
+}
+
+submitScoreBtn.addEventListener("click", saveScore);
 
 // Answer button elements
 var buttonA = document.getElementById("btn-a");
@@ -83,7 +91,6 @@ function startGame() {
     // resets score, currentScore, and secondsLeft
     score = 0;
     currentScore.textContent = score
-    secondsLeft = 76;
     //runs getQuestions function
     getQuestions();
 
@@ -103,6 +110,7 @@ function startGame() {
 function getQuestions() {
 
     if (currentQuestionIndex === 6) {
+        clearInterval(timerInterval);
         endGame();
     } else {
         showQuestion(shuffleQuestions[currentQuestionIndex]);
@@ -148,7 +156,7 @@ function checkAnswer(answer) {
 
 // ends game displays score screen
 function endGame() {
-    clearInterval(timerInterval);
+    secondsLeft = 0;
     gamepageEl.classList.add("hide");
     scorepageEl.classList.remove("hide");
     alert("END OF GAME!" + " You got " + score + " out of 6 questions correct! ");
@@ -157,14 +165,24 @@ function endGame() {
 
 // restarts game 
 function restartGame() {
-    console.log("RS Clicked!");
     // hides game & score page
     gamepageEl.classList.add("hide");
     scorepageEl.classList.add("hide");
     // resets question array
     currentQuestionIndex = 0;
+    // resets timer
+    clearInterval(timerInterval);
+    secondsLeft = 76;
     // restarts game
     startGame();
+}
+
+function saveScore() {
+    var savedName = inputName.value
+    var newScore = {name: savedName, score: score}
+
+    highscores.push(newScore);
+    localStorage.setItem("highscores", highscores);
 }
 
 function viewHighScore() {
